@@ -6,6 +6,7 @@
   'use strict';
 
   const CART_KEY = 'vs_cart_v2';
+  const AGE_KEY = 'vs_age_ok';
   const MIN_ORDER_URL = 'cart.html';
 
   /* ---------- Иконки ---------- */
@@ -190,7 +191,7 @@
       <div class="gate__card">
         <div class="gate__age" aria-hidden="true">18+</div>
         <h2 class="gate__title" id="gate-title">Вам есть 18 лет?</h2>
-        <p class="gate__text">На сайте есть информация о никотиносодержащей продукции. Она предназначена только для совершеннолетних. Подтверждение запрашивается при каждом открытии сайта.</p>
+        <p class="gate__text">На сайте есть информация о никотиносодержащей продукции. Она предназначена только для совершеннолетних. Подтверждение нужно один раз за визит.</p>
         <div class="gate__actions">
           <button class="btn btn--block" type="button" data-gate-yes>Да, мне есть 18</button>
           <button class="btn btn--ghost btn--block" type="button" data-gate-no>Нет, мне меньше 18</button>
@@ -324,9 +325,16 @@
 
     renderCart();
 
-    // Возрастной фильтр показывается при каждом открытии страницы:
-    // ответ нигде не запоминается, подтверждение нужно каждый раз.
-    openGate();
+    // Возрастной фильтр спрашивается один раз за сессию вкладки:
+    // переходы внутри сайта его не повторяют, новая вкладка или новый заход — спрашивают снова.
+    // sessionStorage живёт до закрытия вкладки, в отличие от localStorage.
+    let ageOk = false;
+    try {
+      ageOk = sessionStorage.getItem(AGE_KEY) === '1';
+    } catch (e) {
+      ageOk = false;
+    }
+    if (!ageOk) openGate();
 
     // прямая ссылка на корзину: cart.html#... или любая страница с #cart
     if (location.hash === '#cart') openCart();
@@ -380,6 +388,9 @@
       }
 
       if (e.target.closest('[data-gate-yes]')) {
+        try {
+          sessionStorage.setItem(AGE_KEY, '1');
+        } catch (err) {}
         closeGate();
         return;
       }
