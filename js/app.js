@@ -311,6 +311,43 @@
     document.body.style.overflow = '';
   }
 
+  /* Возрастное подтверждение хранится в sessionStorage текущей вкладки.
+     Если браузер блокирует хранилище (приватный режим, настройки), падаем
+     на сессионную cookie — иначе окно появлялось бы на каждом переходе. */
+  function sessionStorageWorks() {
+    try {
+      const probe = '__vs_probe__';
+      sessionStorage.setItem(probe, '1');
+      sessionStorage.removeItem(probe);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function ageConfirmed() {
+    if (sessionStorageWorks()) {
+      try {
+        return sessionStorage.getItem(AGE_KEY) === '1';
+      } catch (e) {
+        return false;
+      }
+    }
+    return document.cookie.split(';').some((part) => part.trim() === AGE_KEY + '=1');
+  }
+
+  function rememberAge() {
+    if (sessionStorageWorks()) {
+      try {
+        sessionStorage.setItem(AGE_KEY, '1');
+        return;
+      } catch (e) {
+        /* ниже — cookie */
+      }
+    }
+    document.cookie = AGE_KEY + '=1; path=/; SameSite=Lax';
+  }
+
   /* ---------- Инициализация каркаса ---------- */
   function initChrome() {
     if (!document.getElementById('cart-drawer')) {
@@ -327,14 +364,7 @@
 
     // Возрастной фильтр спрашивается один раз за сессию вкладки:
     // переходы внутри сайта его не повторяют, новая вкладка или новый заход — спрашивают снова.
-    // sessionStorage живёт до закрытия вкладки, в отличие от localStorage.
-    let ageOk = false;
-    try {
-      ageOk = sessionStorage.getItem(AGE_KEY) === '1';
-    } catch (e) {
-      ageOk = false;
-    }
-    if (!ageOk) openGate();
+    if (!ageConfirmed()) openGate();
 
     // прямая ссылка на корзину: cart.html#... или любая страница с #cart
     if (location.hash === '#cart') openCart();
@@ -388,9 +418,7 @@
       }
 
       if (e.target.closest('[data-gate-yes]')) {
-        try {
-          sessionStorage.setItem(AGE_KEY, '1');
-        } catch (err) {}
+        rememberAge();
         closeGate();
         return;
       }
