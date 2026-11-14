@@ -2235,6 +2235,54 @@ body.menu-open .mobile-menu { display: flex; }
 
 .form-note { font-size: 11.5px; color: var(--dim); line-height: 1.6; }
 
+.form-note a { color: rgba(201, 255, 60, 0.8); border-bottom: 1px solid rgba(201, 255, 60, 0.3); }
+.form-note a:hover { color: var(--acid); }
+
+.pickup {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 13px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(201, 255, 60, 0.34);
+  background: rgba(201, 255, 60, 0.045);
+}
+
+.pickup__icon {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: rgba(201, 255, 60, 0.12);
+  color: var(--acid);
+}
+
+.pickup__icon svg { width: 16px; height: 16px; }
+
+.pickup__title {
+  font-size: 13.5px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.pickup__text { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+
+.pickup__hint {
+  margin-top: 3px;
+  font-size: 11.5px;
+  color: var(--dim);
+  line-height: 1.5;
+}
+
+.summary__note {
+  margin-top: -4px;
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: var(--dim);
+}
+
 /* ---------- 24. Инфо-страницы ---------- */
 .prose { max-width: 74ch; }
 

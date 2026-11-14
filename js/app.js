@@ -118,15 +118,16 @@
     const lines = store.detailed();
     if (!lines.length) return 'Здравствуйте! Подскажите, пожалуйста, по наличию товара в Vape Shark.';
     const d = details || {};
-    const out = ['Здравствуйте! Хочу оформить заказ в Vape Shark:', ''];
+    const out = ['Здравствуйте! Хочу забронировать в Vape Shark:', ''];
     lines.forEach((l, i) => {
       out.push(`${i + 1}. ${l.product.brand} ${l.product.name} — ${l.qty} шт. × ${money(l.product.price)} = ${money(l.sum)}`);
     });
-    out.push('', `Итого: ${money(store.total())}`);
+    out.push('', `Сумма: ${money(store.total())}`);
+    out.push('Получение: самовывоз, Тюмень, ул. Восстания, 13');
     if (d.name) out.push(`Имя: ${d.name}`);
     if (d.phone) out.push(`Телефон: ${d.phone}`);
-    if (d.method) out.push(`Получение: ${d.method}`);
     if (d.comment) out.push(`Комментарий: ${d.comment}`);
+    out.push('', 'Оплата в магазине при получении.');
     return out.join('\n');
   }
 
@@ -179,9 +180,9 @@
       <div class="drawer__body" data-cart-body></div>
       <div class="drawer__foot">
         <div class="drawer__total"><span>Итого</span><b data-cart-total>0 ₽</b></div>
-        <a class="btn btn--block" href="${MIN_ORDER_URL}" data-cart-checkout>Перейти к оформлению</a>
-        <button class="btn btn--panel btn--block" type="button" data-cart-wa>Заказать в WhatsApp</button>
-        <p class="drawer__hint">Продажа только лицам старше 18 лет. Наличие и итоговую цену подтверждает менеджер.</p>
+        <a class="btn btn--block" href="${MIN_ORDER_URL}" data-cart-checkout>Перейти к бронированию</a>
+        <button class="btn btn--panel btn--block" type="button" data-cart-wa>Забронировать в WhatsApp</button>
+        <p class="drawer__hint">Бронь ни к чему не обязывает: подтвердим наличие и цену, оплата — в магазине. Продажа только с 18 лет.</p>
       </div>
     </aside>`;
 
@@ -254,7 +255,7 @@
           ${ICONS.bag}
           <div>
             <strong style="color:var(--text)">Корзина пуста</strong>
-            <p style="font-size:13px;margin-top:4px">Добавьте товары из каталога — оформим заказ за пару минут.</p>
+            <p style="font-size:13px;margin-top:4px">Добавьте товары из каталога — оформим бронь за пару минут.</p>
           </div>
           <a class="btn btn--panel btn--sm" href="catalog.html">Перейти в каталог</a>
         </div>`;

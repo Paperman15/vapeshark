@@ -69,9 +69,9 @@
     const waLink = root.querySelector('[data-pdp-wa]');
 
     function waHref() {
-      const text = `Здравствуйте! Интересует ${product.brand} ${product.name} — ${qty} шт. (${money(
+      const text = `Здравствуйте! Хочу забронировать ${product.brand} ${product.name} — ${qty} шт. (${money(
         product.price * qty
-      )}). Подскажите, пожалуйста, наличие.`;
+      )}). Подскажите, пожалуйста, наличие. Заберу в магазине на Восстания, 13.`;
       return 'https://wa.me/79612017723?text=' + encodeURIComponent(text);
     }
 

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   VAPE SHARK — страница корзины и оформление заказа
+   VAPE SHARK — корзина и бронирование
    ========================================================================== */
 
 (function () {
@@ -85,7 +85,6 @@
     const data = new FormData(el.form);
     const name = String(data.get('name') || '').trim();
     const phone = String(data.get('phone') || '').trim();
-    const method = String(data.get('method') || '');
     const comment = String(data.get('comment') || '').trim();
 
     const phoneDigits = phone.replace(/\D/g, '');
@@ -102,7 +101,7 @@
       return;
     }
 
-    lastMessage = orderMessage({ name, phone, method, comment });
+    lastMessage = orderMessage({ name, phone, comment });
     const url = whatsappLink(lastMessage);
 
     if (el.successWa) el.successWa.href = url;
@@ -114,7 +113,7 @@
 
   function onCopy() {
     if (!lastMessage) return;
-    const done = () => toast('Текст заказа скопирован');
+    const done = () => toast('Текст брони скопирован');
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText(lastMessage).then(done, () => fallbackCopy());
     } else {

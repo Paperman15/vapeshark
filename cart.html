@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Корзина — Vape Shark, Тюмень</title>
-  <meta name="description" content="Оформление заказа в Vape Shark: проверьте корзину, оставьте имя и телефон — заказ откроется в WhatsApp. Самовывоз в Тюмени, ул. Восстания 13.">
+  <title>Бронирование — Vape Shark, Тюмень</title>
+  <meta name="description" content="Бронирование в Vape Shark: проверьте список, оставьте имя и телефон — бронь откроется в WhatsApp. Самовывоз в Тюмени, ул. Восстания 13. Оплата в магазине.">
   <meta name="theme-color" content="#05050a">
   <meta name="robots" content="noindex">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -20,7 +20,7 @@
         Продажа никотиносодержащей продукции только лицам старше 18 лет
       </div>
       <div class="topbar__links">
-        <a href="delivery.html">Доставка и оплата</a>
+        <a href="booking.html">Бронирование и оплата</a>
         <a href="contacts.html">Контакты</a>
       </div>
     </div>
@@ -40,7 +40,7 @@
 
       <nav class="nav" aria-label="Основная навигация">
         <a class="nav__link" href="catalog.html" data-nav="catalog">Каталог</a>
-        <a class="nav__link" href="delivery.html" data-nav="delivery">Доставка</a>
+        <a class="nav__link" href="booking.html" data-nav="booking">Бронирование</a>
         <a class="nav__link" href="index.html#about" data-nav="about">О магазине</a>
         <a class="nav__link" href="contacts.html" data-nav="contacts">Контакты</a>
       </nav>
@@ -61,7 +61,7 @@
 
   <div class="mobile-menu" aria-label="Мобильное меню">
     <a href="catalog.html">Каталог</a>
-    <a href="delivery.html">Доставка и оплата</a>
+    <a href="booking.html">Бронирование и оплата</a>
     <a href="index.html#about">О магазине</a>
     <a href="contacts.html">Контакты</a>
     <div class="mobile-menu__cta">
@@ -73,7 +73,7 @@
   <main id="main">
     <noscript>
       <div class="wrap" style="padding-top:24px">
-        <div class="prose__note">Корзина работает на JavaScript. Включите его или напишите заказ в <a href="https://wa.me/79612017723" target="_blank" rel="noopener">WhatsApp</a> — соберём и подтвердим вручную.</div>
+        <div class="prose__note">Корзина работает на JavaScript. Включите его или напишите нам в <a href="https://wa.me/79612017723" target="_blank" rel="noopener">WhatsApp</a> — соберём и подтвердим вручную.</div>
       </div>
     </noscript>
     <div class="page-head">
@@ -82,7 +82,7 @@
           <a href="index.html">Главная</a><span>/</span><span style="opacity:1;color:var(--muted)">Корзина</span>
         </nav>
         <h1 class="page-head__title">Корзина</h1>
-        <p class="page-head__desc">Проверьте состав заказа. Мы подтвердим наличие и цену в WhatsApp — оплата при получении.</p>
+        <p class="page-head__desc">Проверьте состав брони. Подтвердим наличие и цену в WhatsApp, оплата — в магазине при получении. Бронь ни к чему не обязывает.</p>
       </div>
     </div>
 
@@ -93,7 +93,7 @@
 
           <div class="empty" data-cart-empty hidden style="margin-top:16px">
             <h3>В корзине пока пусто</h3>
-            <p>Добавьте товары из каталога — заказ соберётся автоматически, и вы сможете отправить его в WhatsApp одной кнопкой.</p>
+            <p>Добавьте товары из каталога — бронь соберётся автоматически, и вы сможете отправить её в WhatsApp одной кнопкой.</p>
             <a class="btn btn--panel btn--sm" href="catalog.html">Перейти в каталог</a>
           </div>
 
@@ -103,11 +103,11 @@
           </div>
         </div>
 
-        <aside class="summary" aria-label="Оформление заказа">
-          <div class="summary__title">Оформление</div>
+        <aside class="summary" aria-label="Бронирование">
+          <div class="summary__title">Бронирование</div>
 
           <div data-summary-empty hidden>
-            <p class="muted" style="font-size:13.5px">Как только добавите товар, здесь появится форма заказа и итоговая сумма.</p>
+            <p class="muted" style="font-size:13.5px">Как только добавите товар, здесь появится форма брони и сумма к оплате в магазине.</p>
             <a class="btn btn--panel btn--block btn--sm" href="catalog.html" style="margin-top:14px">Открыть каталог</a>
           </div>
 
@@ -121,14 +121,20 @@
             <div class="field" data-field="phone">
               <label for="o-phone">Телефон</label>
               <input id="o-phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel">
-              <span class="field__error">Нужен телефон для связи по заказу</span>
+              <span class="field__error">Нужен телефон для связи по брони</span>
             </div>
 
             <div class="field">
               <label>Как получить</label>
-              <div class="radio-row">
-                <label class="radio"><input type="radio" name="method" value="Самовывоз, ул. Восстания 13" checked> Самовывоз, ул. Восстания 13</label>
-                <label class="radio"><input type="radio" name="method" value="Доставка по Тюмени — уточнить условия"> Доставка — уточнить условия</label>
+              <div class="pickup">
+                <span class="pickup__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-10.2A6.5 6.5 0 0 1 12 4.3a6.5 6.5 0 0 1 6.5 6.5C18.5 15.4 12 21 12 21z"/><circle cx="12" cy="10.6" r="2.2"/></svg>
+                </span>
+                <div>
+                  <div class="pickup__title">Самовывоз</div>
+                  <div class="pickup__text">Тюмень, ул. Восстания, 13 · ежедневно 10:00–21:00</div>
+                  <div class="pickup__hint">Оплата в магазине при получении — наличными или картой</div>
+                </div>
               </div>
             </div>
 
@@ -140,17 +146,18 @@
             <div class="summary__row"><span>Товаров</span><b data-sum-count>0</b></div>
             <div class="summary__row"><span>Сумма</span><b data-sum-total>0 ₽</b></div>
             <div class="summary__total"><span>Итого</span><b data-sum-grand>0 ₽</b></div>
+            <p class="summary__note">Сумма к оплате в магазине. Онлайн-оплаты нет — бронь бесплатна и ни к чему не обязывает.</p>
 
-            <button class="btn btn--block" type="submit">Оформить в WhatsApp</button>
-            <p class="form-note">Нажимая кнопку, вы подтверждаете, что вам исполнилось 18 лет. Откроется WhatsApp с готовым текстом заказа — останется нажать «Отправить».</p>
+            <button class="btn btn--block" type="submit">Забронировать в WhatsApp</button>
+            <p class="form-note">Нажимая кнопку, вы подтверждаете, что вам исполнилось 18 лет, и соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a>. Откроется WhatsApp с текстом брони — останется нажать «Отправить».</p>
           </form>
 
           <div data-success hidden>
-            <div class="pdp__stock" style="margin-bottom:10px">Заказ собран</div>
-            <p class="muted" style="font-size:13px;line-height:1.6">Отправьте сообщение в открывшемся WhatsApp. Если окно не открылось — скопируйте текст заказа и пришлите его в удобный мессенджер.</p>
+            <div class="pdp__stock" style="margin-bottom:10px">Бронь собрана</div>
+            <p class="muted" style="font-size:13px;line-height:1.6">Отправьте сообщение в открывшемся WhatsApp. Если окно не открылось — скопируйте текст брони и пришлите его в удобный мессенджер. Оплата — в магазине.</p>
             <div style="display:grid;gap:8px;margin-top:14px">
               <a class="btn btn--block btn--sm" data-success-wa href="https://wa.me/79612017723" target="_blank" rel="noopener">Открыть WhatsApp ещё раз</a>
-              <button class="btn btn--panel btn--block btn--sm" type="button" data-copy>Скопировать текст заказа</button>
+              <button class="btn btn--panel btn--block btn--sm" type="button" data-copy>Скопировать текст брони</button>
             </div>
           </div>
         </aside>
@@ -198,8 +205,8 @@
 
         <div class="foot-col">
           <div class="foot-col__title">Покупателям</div>
-          <a href="delivery.html">Доставка и оплата</a>
-          <a href="delivery.html#return">Возврат и гарантия</a>
+          <a href="booking.html">Бронирование и оплата</a>
+          <a href="booking.html#return">Возврат и гарантия</a>
           <a href="contacts.html">Контакты</a>
           <a href="privacy.html">Политика конфиденциальности</a>
         </div>
