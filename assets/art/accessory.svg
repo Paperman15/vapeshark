@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 300" role="img" aria-label="Аксессуары">
+  <defs>
+    <linearGradient id="aBody" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#26262f"/>
+      <stop offset=".45" stop-color="#111119"/>
+      <stop offset="1" stop-color="#07070c"/>
+    </linearGradient>
+    <linearGradient id="aRim" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c9ff3c" stop-opacity=".55"/>
+      <stop offset=".5" stop-color="#ffffff" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity=".5"/>
+    </linearGradient>
+    <linearGradient id="aCable" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1c1c26"/>
+      <stop offset="1" stop-color="#0c0c13"/>
+    </linearGradient>
+    <filter id="aGlow" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="aGlowS" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+
+  <ellipse cx="170" cy="160" rx="130" ry="110" fill="#8b5cf6" opacity=".12" filter="url(#aGlow)"/>
+
+  <!-- cable -->
+  <path d="M252 96c30 8 46 34 40 58-6 24-34 30-58 30H150" fill="none" stroke="url(#aCable)" stroke-width="12" stroke-linecap="round"/>
+  <path d="M252 96c30 8 46 34 40 58-6 24-34 30-58 30H150" fill="none" stroke="#ffffff" stroke-opacity=".08" stroke-width="12" stroke-linecap="round" stroke-dasharray="2 14"/>
+  <!-- connector -->
+  <rect x="118" y="160" width="40" height="26" rx="8" fill="#1a1a24" stroke="url(#aRim)" transform="rotate(-8 138 173)"/>
+  <rect x="126" y="167" width="22" height="9" rx="4.5" fill="#c9ff3c" opacity=".8" filter="url(#aGlowS)" transform="rotate(-8 138 173)"/>
+
+  <!-- charger body -->
+  <rect x="58" y="86" width="122" height="132" rx="26" fill="url(#aBody)" stroke="url(#aRim)" stroke-width="1.5"/>
+  <rect x="59" y="87" width="120" height="130" rx="25" fill="none" stroke="#ffffff" stroke-opacity=".07"/>
+  <rect x="76" y="106" width="86" height="54" rx="12" fill="#07070c" stroke="#ffffff" stroke-opacity=".08"/>
+  <text x="119" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" fill="#e9e9f2">33<tspan font-size="11" fill="#9a9aae"> W</tspan></text>
+  <g fill="#c9ff3c">
+    <circle cx="86" cy="188" r="4" opacity=".9"/>
+    <circle cx="104" cy="188" r="4" opacity=".45"/>
+    <circle cx="122" cy="188" r="4" opacity=".22"/>
+    <circle cx="140" cy="188" r="4" opacity=".22"/>
+  </g>
+  <!-- prongs -->
+  <path d="M84 218v22M154 218v22" stroke="#c9ff3c" stroke-width="6" stroke-linecap="round" opacity=".85"/>
+  <path d="M84 218v22M154 218v22" stroke="#c9ff3c" stroke-width="6" stroke-linecap="round" filter="url(#aGlowS)"/>
+
+  <!-- small case -->
+  <rect x="204" y="182" width="86" height="58" rx="16" fill="url(#aBody)" stroke="url(#aRim)" stroke-width="1.2"/>
+  <path d="M204 214h86" stroke="#ffffff" stroke-opacity=".08"/>
+  <circle cx="247" cy="200" r="5" fill="#c9ff3c" filter="url(#aGlowS)"/>
+  <circle cx="247" cy="200" r="5" fill="#c9ff3c" opacity=".9"/>
+</svg>

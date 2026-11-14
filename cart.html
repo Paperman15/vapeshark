@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Корзина — Vape Shark, Тюмень</title>
+  <meta name="description" content="Оформление заказа в Vape Shark: проверьте корзину, оставьте имя и телефон — заказ откроется в WhatsApp. Самовывоз в Тюмени, ул. Восстания 13.">
+  <meta name="theme-color" content="#05050a">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="cart">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <div class="topbar">
+    <div class="wrap topbar__inner">
+      <div class="topbar__note">
+        <span class="age-dot">18+</span>
+        Продажа никотиносодержащей продукции только лицам старше 18 лет
+      </div>
+      <div class="topbar__links">
+        <a href="delivery.html">Доставка и оплата</a>
+        <a href="contacts.html">Контакты</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="index.html" aria-label="Vape Shark — на главную">
+        <span class="logo__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4.5 19.5c.9-5.6 2.9-9.9 6.1-13 2.4-2.3 5.3-3.8 8.9-4.5-.7 3.9-2 7.3-4 10.4-2 3.1-4.9 5.6-8.4 7.1z" fill="#c9ff3c"/></svg>
+        </span>
+        <span class="logo__text">
+          <span class="logo__name">Vape Shark</span>
+          <span class="logo__sub">Тюмень · с 18 лет</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <a class="nav__link" href="catalog.html" data-nav="catalog">Каталог</a>
+        <a class="nav__link" href="delivery.html" data-nav="delivery">Доставка</a>
+        <a class="nav__link" href="index.html#about" data-nav="about">О магазине</a>
+        <a class="nav__link" href="contacts.html" data-nav="contacts">Контакты</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="header-phone" href="tel:+79612017723" aria-label="Позвонить +7 961 201-77-23">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3.5l1.7 4.3-2.1 1.5a11 11 0 0 0 5.6 5.6l1.5-2.1L19.5 15V19a1.5 1.5 0 0 1-1.7 1.5C10.9 19.7 4.3 13.1 3.5 5.7A1.5 1.5 0 0 1 5 4z"/></svg>
+          <span>+7 (961) 201-77-23</span>
+        </a>
+        <button class="icon-btn" type="button" data-cart-open aria-label="Открыть корзину">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M6 8h12l1 12H5L6 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+          <span class="js-cart-count cart-count" aria-hidden="true">0</span>
+        </button>
+        <button class="burger" type="button" data-burger aria-label="Меню" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" aria-label="Мобильное меню">
+    <a href="catalog.html">Каталог</a>
+    <a href="delivery.html">Доставка и оплата</a>
+    <a href="index.html#about">О магазине</a>
+    <a href="contacts.html">Контакты</a>
+    <div class="mobile-menu__cta">
+      <a class="btn btn--block" href="https://wa.me/79612017723" target="_blank" rel="noopener">Написать в WhatsApp</a>
+      <a class="btn btn--ghost btn--block" href="tel:+79612017723">+7 (961) 201-77-23</a>
+    </div>
+  </div>
+
+  <main id="main">
+    <noscript>
+      <div class="wrap" style="padding-top:24px">
+        <div class="prose__note">Корзина работает на JavaScript. Включите его или напишите заказ в <a href="https://wa.me/79612017723" target="_blank" rel="noopener">WhatsApp</a> — соберём и подтвердим вручную.</div>
+      </div>
+    </noscript>
+    <div class="page-head">
+      <div class="wrap">
+        <nav class="page-head__crumbs" aria-label="Хлебные крошки">
+          <a href="index.html">Главная</a><span>/</span><span style="opacity:1;color:var(--muted)">Корзина</span>
+        </nav>
+        <h1 class="page-head__title">Корзина</h1>
+        <p class="page-head__desc">Проверьте состав заказа. Мы подтвердим наличие и цену в WhatsApp — оплата при получении.</p>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="cart-page">
+        <div>
+          <div class="cart-list" data-cart-list aria-live="polite"></div>
+
+          <div class="empty" data-cart-empty hidden style="margin-top:16px">
+            <h3>В корзине пока пусто</h3>
+            <p>Добавьте товары из каталога — заказ соберётся автоматически, и вы сможете отправить его в WhatsApp одной кнопкой.</p>
+            <a class="btn btn--panel btn--sm" href="catalog.html">Перейти в каталог</a>
+          </div>
+
+          <div data-cart-actions hidden style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+            <a class="btn btn--panel btn--sm" href="catalog.html">Продолжить покупки</a>
+            <button class="btn btn--panel btn--sm" type="button" data-clear>Очистить корзину</button>
+          </div>
+        </div>
+
+        <aside class="summary" aria-label="Оформление заказа">
+          <div class="summary__title">Оформление</div>
+
+          <div data-summary-empty hidden>
+            <p class="muted" style="font-size:13.5px">Как только добавите товар, здесь появится форма заказа и итоговая сумма.</p>
+            <a class="btn btn--panel btn--block btn--sm" href="catalog.html" style="margin-top:14px">Открыть каталог</a>
+          </div>
+
+          <form class="form-grid" data-order-form novalidate hidden>
+            <div class="field" data-field="name">
+              <label for="o-name">Имя</label>
+              <input id="o-name" name="name" type="text" placeholder="Как к вам обращаться" autocomplete="name">
+              <span class="field__error">Укажите, как к вам обращаться</span>
+            </div>
+
+            <div class="field" data-field="phone">
+              <label for="o-phone">Телефон</label>
+              <input id="o-phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel">
+              <span class="field__error">Нужен телефон для связи по заказу</span>
+            </div>
+
+            <div class="field">
+              <label>Как получить</label>
+              <div class="radio-row">
+                <label class="radio"><input type="radio" name="method" value="Самовывоз, ул. Восстания 13" checked> Самовывоз, ул. Восстания 13</label>
+                <label class="radio"><input type="radio" name="method" value="Доставка по Тюмени — уточнить условия"> Доставка — уточнить условия</label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="o-comment">Комментарий</label>
+              <textarea id="o-comment" name="comment" placeholder="Вкус, удобное время, пожелания"></textarea>
+            </div>
+
+            <div class="summary__row"><span>Товаров</span><b data-sum-count>0</b></div>
+            <div class="summary__row"><span>Сумма</span><b data-sum-total>0 ₽</b></div>
+            <div class="summary__total"><span>Итого</span><b data-sum-grand>0 ₽</b></div>
+
+            <button class="btn btn--block" type="submit">Оформить в WhatsApp</button>
+            <p class="form-note">Нажимая кнопку, вы подтверждаете, что вам исполнилось 18 лет. Откроется WhatsApp с готовым текстом заказа — останется нажать «Отправить».</p>
+          </form>
+
+          <div data-success hidden>
+            <div class="pdp__stock" style="margin-bottom:10px">Заказ собран</div>
+            <p class="muted" style="font-size:13px;line-height:1.6">Отправьте сообщение в открывшемся WhatsApp. Если окно не открылось — скопируйте текст заказа и пришлите его в удобный мессенджер.</p>
+            <div style="display:grid;gap:8px;margin-top:14px">
+              <a class="btn btn--block btn--sm" data-success-wa href="https://wa.me/79612017723" target="_blank" rel="noopener">Открыть WhatsApp ещё раз</a>
+              <button class="btn btn--panel btn--block btn--sm" type="button" data-copy>Скопировать текст заказа</button>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <section class="section section--tight"></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-col foot-brand">
+          <a class="logo" href="index.html" aria-label="Vape Shark — на главную">
+            <span class="logo__mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4.5 19.5c.9-5.6 2.9-9.9 6.1-13 2.4-2.3 5.3-3.8 8.9-4.5-.7 3.9-2 7.3-4 10.4-2 3.1-4.9 5.6-8.4 7.1z" fill="#c9ff3c"/></svg>
+            </span>
+            <span class="logo__text">
+              <span class="logo__name">Vape Shark</span>
+              <span class="logo__sub">Тюмень · с 18 лет</span>
+            </span>
+          </a>
+          <p style="margin-top:16px">Вейп-шоп в центре Тюмени. POD-системы, одноразки, жидкости и расходники. Помогаем выбрать без лишнего.</p>
+          <div class="foot-social">
+            <a href="https://vk.com/vapeshark72" target="_blank" rel="noopener" aria-label="ВКонтакте">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.8 17.3h1.3c.5 0 .7-.4.7-.8 0-.5-.1-1 .3-1.3.4-.3 1 .4 1.5 1 .5.5 1 .8 1.7.8h1.9c.5 0 .8-.3.5-.9-.4-1-1.3-2-2.1-2.7-.5-.4-.4-.6 0-1 .7-.6 1.6-1.7 1.9-2.8.3-.8 0-1.1-.6-1.1h-1.8c-.5 0-.8.3-1 .8-.3.9-.8 1.7-1.4 2.3-.4.4-.7.3-.9-.2-.2-.5-.3-1.3-.4-2-.1-.6-.3-.8-.8-.8h-1.4c-.6 0-1 .4-1.2.9-.2.7.4.9.7 1.6.3.8.5 1.6.4 2.4-.1.7-.6.8-1.1.4-.9-.7-1.6-1.8-2.1-3-.2-.5-.4-.7-1-.7H7.5c-.6 0-.9.4-.8 1 .3 2 2.4 6.5 6.1 6.5z"/></svg>
+            </a>
+            <a href="https://wa.me/79612017723" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3zm4.6 12.3c-.2.6-1.1 1.1-1.6 1.2-.5 0-1 0-1.7-.3-1.5-.5-3.4-2-4.4-4-.4-.8-.5-1.5-.4-2 .1-.5.5-1 .8-1.2.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.7 1.7c.1.2 0 .4-.1.6l-.3.4c-.1.2-.3.3-.1.6.2.4.6 1 1.1 1.5.6.6 1.2.9 1.5 1 .2.1.4.1.6-.1l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.2.4.5z"/></svg>
+            </a>
+            <a href="tel:+79612017723" aria-label="Позвонить">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3.5l1.7 4.3-2.1 1.5a11 11 0 0 0 5.6 5.6l1.5-2.1L19.5 15V19a1.5 1.5 0 0 1-1.7 1.5C10.9 19.7 4.3 13.1 3.5 5.7A1.5 1.5 0 0 1 5 4z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="foot-col">
+          <div class="foot-col__title">Каталог</div>
+          <a href="catalog.html?cat=disposable">Одноразки</a>
+          <a href="catalog.html?cat=pod">POD-системы</a>
+          <a href="catalog.html?cat=liquid">Жидкости</a>
+          <a href="catalog.html?cat=coil">Картриджи</a>
+          <a href="catalog.html?cat=accessory">Аксессуары</a>
+        </div>
+
+        <div class="foot-col">
+          <div class="foot-col__title">Покупателям</div>
+          <a href="delivery.html">Доставка и оплата</a>
+          <a href="delivery.html#return">Возврат и гарантия</a>
+          <a href="contacts.html">Контакты</a>
+          <a href="privacy.html">Политика конфиденциальности</a>
+        </div>
+
+        <div class="foot-col">
+          <div class="foot-col__title">Магазин</div>
+          <p>г. Тюмень, ул. Восстания, 13</p>
+          <p>Ежедневно, 10:00–21:00</p>
+          <a href="tel:+79612017723">+7 (961) 201-77-23</a>
+          <a href="https://vk.com/vapeshark72" target="_blank" rel="noopener">vk.com/vapeshark72</a>
+        </div>
+      </div>
+
+      <div class="foot-bottom">
+        <p>© <span data-year>2026</span> Vape Shark, Тюмень. Информация на сайте не является публичной офертой: наличие, цена и характеристики уточняются у менеджера. Сайт содержит информацию о никотиносодержащей продукции и предназначен для лиц старше 18 лет.</p>
+        <div class="foot-bottom__meta">
+          <span>18+</span>
+          <span>Не является рекламой табака</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/cart-page.js"></script>
+</body>
+</html>

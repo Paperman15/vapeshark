@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 560" role="img" aria-label="Одноразовая электронная сигарета">
+  <defs>
+    <linearGradient id="dBody" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#20202c"/>
+      <stop offset=".22" stop-color="#15151f"/>
+      <stop offset=".62" stop-color="#0b0b13"/>
+      <stop offset="1" stop-color="#191924"/>
+    </linearGradient>
+    <linearGradient id="dRim" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c9ff3c" stop-opacity=".9"/>
+      <stop offset=".45" stop-color="#c9ff3c" stop-opacity="0"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity=".55"/>
+    </linearGradient>
+    <linearGradient id="dAcid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8ffb0"/>
+      <stop offset=".5" stop-color="#c9ff3c"/>
+      <stop offset="1" stop-color="#7bb800"/>
+    </linearGradient>
+    <linearGradient id="dGlass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".16"/>
+      <stop offset=".35" stop-color="#ffffff" stop-opacity=".03"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="dGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <ellipse cx="120" cy="300" rx="86" ry="230" fill="#c9ff3c" opacity=".10" filter="url(#dGlow)"/>
+  <ellipse cx="120" cy="530" rx="66" ry="16" fill="#000" opacity=".55" filter="url(#dGlow)"/>
+
+  <!-- mouthpiece -->
+  <rect x="96" y="46" width="48" height="62" rx="14" fill="#101018" stroke="url(#dRim)" stroke-width="1.5"/>
+  <rect x="104" y="58" width="32" height="10" rx="5" fill="#c9ff3c" opacity=".22"/>
+
+  <!-- body -->
+  <rect x="66" y="96" width="108" height="410" rx="30" fill="url(#dBody)" stroke="url(#dRim)" stroke-width="1.5"/>
+  <rect x="66.8" y="96.8" width="106.4" height="408.4" rx="29.2" fill="none" stroke="#ffffff" stroke-opacity=".07"/>
+
+  <!-- side light strip -->
+  <rect x="76" y="150" width="7" height="300" rx="3.5" fill="url(#dAcid)" opacity=".9"/>
+  <rect x="76" y="150" width="7" height="300" rx="3.5" fill="url(#dAcid)" opacity=".7" filter="url(#dGlow)"/>
+
+  <!-- glass reflection -->
+  <path d="M150 108h10c6 0 10 5 10 11v240c0 12-4 20-10 26-6 6-10 3-10-6z" fill="url(#dGlass)"/>
+
+  <!-- label band -->
+  <g opacity=".9">
+    <rect x="92" y="292" width="56" height="2" rx="1" fill="#c9ff3c" opacity=".5"/>
+    <text x="120" y="330" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#e9e9f2" letter-spacing="2.4">VAPE</text>
+    <text x="120" y="352" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#c9ff3c" letter-spacing="2.4">SHARK</text>
+    <rect x="92" y="372" width="56" height="2" rx="1" fill="#c9ff3c" opacity=".5"/>
+  </g>
+
+  <!-- led -->
+  <circle cx="120" cy="470" r="5" fill="#c9ff3c"/>
+  <circle cx="120" cy="470" r="5" fill="#c9ff3c" filter="url(#dGlow)"/>
+
+  <!-- floating particles -->
+  <g fill="#c9ff3c" opacity=".5">
+    <circle cx="44" cy="210" r="2"/>
+    <circle cx="196" cy="268" r="1.6"/>
+    <circle cx="38" cy="372" r="1.4"/>
+    <circle cx="204" cy="150" r="1.8"/>
+  </g>
+</svg>

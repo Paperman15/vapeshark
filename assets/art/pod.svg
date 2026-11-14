@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 560" role="img" aria-label="POD-система">
+  <defs>
+    <linearGradient id="pBody" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#24242f"/>
+      <stop offset=".35" stop-color="#101018"/>
+      <stop offset="1" stop-color="#07070c"/>
+    </linearGradient>
+    <linearGradient id="pEdge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".18"/>
+      <stop offset=".5" stop-color="#ffffff" stop-opacity=".02"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity=".35"/>
+    </linearGradient>
+    <linearGradient id="pTank" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c9ff3c" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity=".28"/>
+    </linearGradient>
+    <linearGradient id="pScreen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1210"/>
+      <stop offset="1" stop-color="#0a0a12"/>
+    </linearGradient>
+    <filter id="pGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+    <filter id="pGlowSoft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+  </defs>
+
+  <ellipse cx="140" cy="300" rx="96" ry="220" fill="#8b5cf6" opacity=".14" filter="url(#pGlow)"/>
+  <ellipse cx="140" cy="536" rx="70" ry="14" fill="#000" opacity=".5" filter="url(#pGlow)"/>
+
+  <!-- mouthpiece -->
+  <path d="M114 40h52c8 0 14 6 14 14v26c0 8-6 14-14 14h-52c-8 0-14-6-14-14V54c0-8 6-14 14-14z" fill="#12121b" stroke="url(#pEdge)"/>
+  <rect x="124" y="52" width="32" height="8" rx="4" fill="#c9ff3c" opacity=".3"/>
+
+  <!-- tank -->
+  <rect x="78" y="94" width="124" height="112" rx="26" fill="url(#pTank)" stroke="#ffffff" stroke-opacity=".16"/>
+  <rect x="94" y="150" width="92" height="44" rx="22" fill="#0a0a12" opacity=".55"/>
+  <g stroke="#c9ff3c" stroke-opacity=".5" stroke-width="2.4" stroke-linecap="round">
+    <path d="M108 172h30"/>
+    <path d="M144 172h24"/>
+  </g>
+
+  <!-- body -->
+  <rect x="62" y="196" width="156" height="316" rx="34" fill="url(#pBody)" stroke="url(#pEdge)" stroke-width="1.5"/>
+  <rect x="63" y="197" width="154" height="314" rx="33" fill="none" stroke="#ffffff" stroke-opacity=".06"/>
+
+  <!-- screen -->
+  <rect x="88" y="228" width="104" height="86" rx="14" fill="url(#pScreen)" stroke="#c9ff3c" stroke-opacity=".35"/>
+  <text x="104" y="266" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700" fill="#e9e9f2">65</text>
+  <text x="137" y="266" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#9a9aae">W</text>
+  <g stroke-linecap="round">
+    <path d="M104 288h24" stroke="#c9ff3c" stroke-width="3" opacity=".85"/>
+    <path d="M134 288h20" stroke="#ffffff" stroke-width="3" opacity=".22"/>
+    <path d="M160 288h16" stroke="#ffffff" stroke-width="3" opacity=".15"/>
+  </g>
+
+  <!-- fire button -->
+  <rect x="96" y="342" width="88" height="24" rx="12" fill="#0b0b13" stroke="#ffffff" stroke-opacity=".1"/>
+  <rect x="104" y="349" width="34" height="10" rx="5" fill="#c9ff3c" opacity=".75" filter="url(#pGlowSoft)"/>
+
+  <!-- air slots -->
+  <g fill="#ffffff" opacity=".18">
+    <rect x="86" y="392" width="8" height="40" rx="4"/>
+    <rect x="100" y="392" width="8" height="40" rx="4"/>
+    <rect x="114" y="392" width="8" height="40" rx="4"/>
+  </g>
+
+  <!-- type-c -->
+  <rect x="118" y="500" width="44" height="8" rx="4" fill="#000" opacity=".8" stroke="#ffffff" stroke-opacity=".1"/>
+
+  <!-- brand -->
+  <text x="140" y="462" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#9a9aae" letter-spacing="3">VAPE SHARK</text>
+
+  <g fill="#8b5cf6" opacity=".6">
+    <circle cx="212" cy="250" r="2"/>
+    <circle cx="52" cy="330" r="1.6"/>
+    <circle cx="206" cy="420" r="1.4"/>
+  </g>
+</svg>
