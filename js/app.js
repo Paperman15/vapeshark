@@ -6,7 +6,6 @@
   'use strict';
 
   const CART_KEY = 'vs_cart_v2';
-  const AGE_KEY = 'vs_age_ok';
   const MIN_ORDER_URL = 'cart.html';
 
   /* ---------- Иконки ---------- */
@@ -191,7 +190,7 @@
       <div class="gate__card">
         <div class="gate__age" aria-hidden="true">18+</div>
         <h2 class="gate__title" id="gate-title">Вам есть 18 лет?</h2>
-        <p class="gate__text">На сайте есть информация о никотиносодержащей продукции. Она предназначена только для совершеннолетних.</p>
+        <p class="gate__text">На сайте есть информация о никотиносодержащей продукции. Она предназначена только для совершеннолетних. Подтверждение запрашивается при каждом открытии сайта.</p>
         <div class="gate__actions">
           <button class="btn btn--block" type="button" data-gate-yes>Да, мне есть 18</button>
           <button class="btn btn--ghost btn--block" type="button" data-gate-no>Нет, мне меньше 18</button>
@@ -325,13 +324,9 @@
 
     renderCart();
 
-    let ageOk = false;
-    try {
-      ageOk = localStorage.getItem(AGE_KEY) === '1';
-    } catch (e) {
-      ageOk = false;
-    }
-    if (!ageOk) openGate();
+    // Возрастной фильтр показывается при каждом открытии страницы:
+    // ответ нигде не запоминается, подтверждение нужно каждый раз.
+    openGate();
 
     // прямая ссылка на корзину: cart.html#... или любая страница с #cart
     if (location.hash === '#cart') openCart();
@@ -385,9 +380,6 @@
       }
 
       if (e.target.closest('[data-gate-yes]')) {
-        try {
-          localStorage.setItem(AGE_KEY, '1');
-        } catch (err) {}
         closeGate();
         return;
       }
@@ -425,9 +417,30 @@
     });
 
     document.addEventListener('keydown', (e) => {
+      const gate = document.getElementById('age-gate');
+      const gateOpen = gate && gate.classList.contains('is-open');
+
+      // окно 18+ нельзя закрыть клавишей Esc — только кнопкой «Да»
+      if (gateOpen) {
+        if (e.key === 'Tab') {
+          const focusable = gate.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])');
+          if (focusable.length) {
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
+          }
+        }
+        return;
+      }
+
       if (e.key !== 'Escape') return;
       closeCart();
-      closeGate();
       document.body.classList.remove('menu-open');
     });
 
