@@ -9,14 +9,14 @@
   const { PRODUCTS, byId, cardHTML } = window.VS;
 
   const HIT_IDS = [
-    'elfbar-bc10000',
-    'voopoo-argus-p2',
-    'jam-monster-blueberry',
-    'voopoo-ito-cartridge',
-    'lost-mary-bm5000',
-    'voopoo-drag-s2',
-    'husky-salt-30',
-    'usb-c-33w'
+    'vaporesso-xros-6-cosmic',
+    'lost-mary-bm-16000',
+    'faff-melon',
+    'vaporesso-xros-pod-06-2ml',
+    'catswill-salt-pear-lime-mint',
+    'indosour-watermelon',
+    'geekvape-aegis-hero-5-red',
+    'hungry-milk-cookie'
   ];
 
   function initHits() {

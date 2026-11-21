@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-label="Никотиновые паучи">
+  <defs>
+    <linearGradient id="pouTin" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2a2a38"/>
+      <stop offset=".45" stop-color="#14141d"/>
+      <stop offset="1" stop-color="#08080e"/>
+    </linearGradient>
+    <linearGradient id="pouLid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#33333f"/>
+      <stop offset="1" stop-color="#12121b"/>
+    </linearGradient>
+    <linearGradient id="pouAcid" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e8ffb0"/>
+      <stop offset="1" stop-color="#8ec400"/>
+    </linearGradient>
+    <filter id="pouGlow" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <ellipse cx="150" cy="200" rx="120" ry="70" fill="#c9ff3c" opacity=".12" filter="url(#pouGlow)"/>
+  <ellipse cx="150" cy="268" rx="80" ry="14" fill="#000" opacity=".55" filter="url(#pouGlow)"/>
+
+  <!-- банка -->
+  <path d="M78 122v104c0 15 32 27 72 27s72-12 72-27V122z" fill="url(#pouTin)"/>
+  <path d="M78 122v104c0 15 32 27 72 27s72-12 72-27V122" fill="none" stroke="#ffffff" stroke-opacity=".08"/>
+
+  <!-- полоса -->
+  <rect x="78" y="196" width="144" height="10" fill="url(#pouAcid)" opacity=".85"/>
+  <rect x="78" y="196" width="144" height="10" fill="#c9ff3c" opacity=".5" filter="url(#pouGlow)"/>
+
+  <!-- крышка -->
+  <ellipse cx="150" cy="122" rx="72" ry="26" fill="url(#pouLid)" stroke="#ffffff" stroke-opacity=".14"/>
+  <ellipse cx="150" cy="122" rx="52" ry="17" fill="none" stroke="#c9ff3c" stroke-opacity=".45" stroke-width="2"/>
+  <ellipse cx="150" cy="122" rx="30" ry="9" fill="#c9ff3c" opacity=".12"/>
+
+  <!-- подпись -->
+  <text x="150" y="236" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#9a9aae" letter-spacing="2.4">POUCHES</text>
+
+  <!-- паучи -->
+  <g transform="rotate(-8 228 252)">
+    <rect x="206" y="240" width="44" height="26" rx="8" fill="#f2f2f5" opacity=".92"/>
+    <rect x="214" y="247" width="28" height="4" rx="2" fill="#0a0a12" opacity=".25"/>
+  </g>
+  <g transform="rotate(7 258 236)">
+    <rect x="240" y="224" width="38" height="22" rx="7" fill="#e8e8ee" opacity=".8"/>
+  </g>
+
+  <g fill="#c9ff3c" opacity=".55">
+    <circle cx="66" cy="176" r="2"/>
+    <circle cx="238" cy="158" r="1.6"/>
+  </g>
+</svg>

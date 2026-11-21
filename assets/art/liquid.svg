@@ -53,11 +53,10 @@
   <g>
     <rect x="96" y="250" width="108" height="86" rx="10" fill="#06060b" opacity=".72" stroke="#ffffff" stroke-opacity=".08"/>
     <text x="150" y="282" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#e9e9f2" letter-spacing="2">VAPE SHARK</text>
-    <text x="150" y="304" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#9a9aae" letter-spacing="1.6">SALT NICOTINE</text>
+    <text x="150" y="304" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#9a9aae" letter-spacing="1.6">E-LIQUID</text>
     <g stroke-width="3" stroke-linecap="round">
-      <path d="M126 320h48" stroke="#c9ff3c" opacity=".8"/>
+      <path d="M126 318h48" stroke="#c9ff3c" opacity=".8"/>
     </g>
-    <text x="150" y="330" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#c9ff3c" letter-spacing="2">30 ML · 20 MG</text>
   </g>
 
   <!-- shine -->

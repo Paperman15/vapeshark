@@ -35,7 +35,7 @@
     root.hidden = false;
 
     const img = root.querySelector('[data-pdp-img]');
-    img.src = cat.art;
+    img.src = product.art || cat.art;
     img.alt = `${product.brand} ${product.name}`;
     img.style.setProperty('--tint', tint(product.id) + 'deg');
 

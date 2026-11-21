@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 560" role="img" aria-label="POD-мод">
+  <defs>
+    <linearGradient id="mBody" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#26262f"/>
+      <stop offset=".4" stop-color="#111119"/>
+      <stop offset="1" stop-color="#07070c"/>
+    </linearGradient>
+    <linearGradient id="mEdge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".18"/>
+      <stop offset=".55" stop-color="#ffffff" stop-opacity=".02"/>
+      <stop offset="1" stop-color="#c9ff3c" stop-opacity=".35"/>
+    </linearGradient>
+    <linearGradient id="mTank" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c9ff3c" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity=".32"/>
+    </linearGradient>
+    <linearGradient id="mScreen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1210"/>
+      <stop offset="1" stop-color="#0a0a12"/>
+    </linearGradient>
+    <filter id="mGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+    <filter id="mGlowS" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+
+  <ellipse cx="140" cy="300" rx="100" ry="220" fill="#c9ff3c" opacity=".1" filter="url(#mGlow)"/>
+  <ellipse cx="140" cy="534" rx="70" ry="14" fill="#000" opacity=".5" filter="url(#mGlow)"/>
+
+  <!-- мундштук -->
+  <path d="M120 38h40c8 0 14 6 14 14v20c0 6-5 11-11 11h-46c-6 0-11-5-11-11V52c0-8 6-14 14-14z" fill="#12121b" stroke="url(#mEdge)"/>
+  <rect x="128" y="48" width="24" height="7" rx="3.5" fill="#c9ff3c" opacity=".3"/>
+
+  <!-- бак -->
+  <rect x="94" y="84" width="92" height="104" rx="20" fill="url(#mTank)" stroke="#ffffff" stroke-opacity=".16"/>
+  <rect x="104" y="128" width="72" height="40" rx="18" fill="#0a0a12" opacity=".45"/>
+  <g stroke="#c9ff3c" stroke-opacity=".55" stroke-width="2.2" stroke-linecap="round">
+    <path d="M116 148h18"/>
+    <path d="M142 148h22"/>
+  </g>
+
+  <!-- корпус -->
+  <rect x="66" y="188" width="148" height="330" rx="30" fill="url(#mBody)" stroke="url(#mEdge)" stroke-width="1.5"/>
+  <rect x="67" y="189" width="146" height="328" rx="29" fill="none" stroke="#ffffff" stroke-opacity=".06"/>
+
+  <!-- экран -->
+  <rect x="90" y="216" width="100" height="76" rx="12" fill="url(#mScreen)" stroke="#c9ff3c" stroke-opacity=".32"/>
+  <g fill="none" stroke="#c9ff3c" stroke-opacity=".5" stroke-width="2">
+    <rect x="104" y="238" width="46" height="20" rx="6"/>
+  </g>
+  <rect x="109" y="243" width="26" height="10" rx="3" fill="#c9ff3c" opacity=".85"/>
+  <rect x="152" y="243" width="4" height="11" rx="2" fill="#c9ff3c" opacity=".55"/>
+  <g stroke-linecap="round">
+    <path d="M104 274h22" stroke="#c9ff3c" stroke-width="3" opacity=".8"/>
+    <path d="M132 274h18" stroke="#ffffff" stroke-width="3" opacity=".2"/>
+    <path d="M156 274h22" stroke="#ffffff" stroke-width="3" opacity=".14"/>
+  </g>
+
+  <!-- кнопка -->
+  <rect x="104" y="318" width="72" height="22" rx="11" fill="#0b0b13" stroke="#ffffff" stroke-opacity=".1"/>
+  <rect x="112" y="324" width="30" height="10" rx="5" fill="#c9ff3c" opacity=".8" filter="url(#mGlowS)"/>
+
+  <!-- обдув -->
+  <g fill="#ffffff" opacity=".16">
+    <rect x="94" y="360" width="7" height="34" rx="3.5"/>
+    <rect x="107" y="360" width="7" height="34" rx="3.5"/>
+    <rect x="120" y="360" width="7" height="34" rx="3.5"/>
+  </g>
+
+  <!-- type-c -->
+  <rect x="116" y="482" width="48" height="8" rx="4" fill="#000" opacity=".8" stroke="#ffffff" stroke-opacity=".1"/>
+
+  <text x="140" y="444" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#9a9aae" letter-spacing="3">VAPE SHARK</text>
+
+  <g fill="#c9ff3c" opacity=".5">
+    <circle cx="222" cy="248" r="2"/>
+    <circle cx="58" cy="330" r="1.6"/>
+    <circle cx="218" cy="414" r="1.4"/>
+  </g>
+</svg>

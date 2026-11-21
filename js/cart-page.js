@@ -6,7 +6,7 @@
   'use strict';
   if (!window.VS) return;
 
-  const { store, money, byId, catOf, escapeHtml, toast, orderMessage, whatsappLink, plural, tint } = window.VS;
+  const { store, money, byId, catOf, escapeHtml, toast, orderMessage, whatsappLink, plural, tint, artOf } = window.VS;
 
   const el = {
     list: document.querySelector('[data-cart-list]'),
@@ -32,7 +32,7 @@
     return `
       <article class="cart-row" data-row="${p.id}">
         <a class="cart-row__media" href="product.html?id=${p.id}" tabindex="-1" aria-hidden="true">
-          <img src="${cat.art}" alt="" width="80" height="80" loading="lazy" style="--tint:${tint(p.id)}deg">
+          <img src="${artOf(p)}" alt="" width="80" height="80" loading="lazy" style="--tint:${tint(p.id)}deg">
         </a>
         <div>
           <div class="cart-row__brand">${escapeHtml(p.brand)}</div>

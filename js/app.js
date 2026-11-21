@@ -25,6 +25,7 @@
   const money = (n) => new Intl.NumberFormat('ru-RU').format(Math.round(n)) + ' ₽';
   const byId = (id) => PRODUCTS.find((p) => p.id === id);
   const catOf = (id) => CATEGORIES.find((c) => c.id === id) || CATEGORIES[0];
+  const artOf = (p) => (p && p.art) || catOf(p.category).art;
   const plural = (n, one, few, many) => {
     const n10 = n % 10;
     const n100 = n % 100;
@@ -149,7 +150,7 @@
         <div class="card__media">
           <div class="card__badges">${badges}</div>
           <a class="card__fav" href="product.html?id=${p.id}" aria-label="Подробнее о ${escapeHtml(p.brand)} ${escapeHtml(p.name)}">${ICONS.heart}</a>
-          <img src="${cat.art}" alt="${escapeHtml(p.brand)} ${escapeHtml(p.name)}" loading="lazy" width="300" height="300" style="--tint:${tint(p.id)}deg">
+          <img src="${artOf(p)}" alt="${escapeHtml(p.brand)} ${escapeHtml(p.name)}" loading="lazy" width="300" height="300" style="--tint:${tint(p.id)}deg">
         </div>
         <div class="card__body">
           <div class="card__brand">${escapeHtml(p.brand)}</div>
@@ -209,7 +210,7 @@
     return `
       <article class="cart-line" data-line="${p.id}">
         <a class="cart-line__media" href="product.html?id=${p.id}" aria-hidden="true" tabindex="-1">
-          <img src="${cat.art}" alt="" loading="lazy" width="60" height="60" style="--tint:${tint(p.id)}deg">
+          <img src="${artOf(p)}" alt="" loading="lazy" width="60" height="60" style="--tint:${tint(p.id)}deg">
         </a>
         <div class="cart-line__body">
           <div class="cart-line__name"><a href="product.html?id=${p.id}">${escapeHtml(p.name)}</a></div>
@@ -535,6 +536,7 @@
     byId,
     catOf,
     plural,
+    artOf,
     escapeHtml,
     tint,
     cardHTML,
